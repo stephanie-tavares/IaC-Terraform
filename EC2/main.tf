@@ -4,7 +4,7 @@ resource "aws_instance" "EC2-Stephanie" {
   security_groups = [aws_security_group.ec2-rules.id]
   iam_instance_profile = var.iam_instance_profile
   key_name = ""
-  user_data = "${file("instalador.sh")}"
+  user_data = "${file("instalador.sh")}" #Usando arquivo externo para execução em shell quando a máquina ficar up.
   vpc_security_group_ids = [aws_security_group.ec2-rules.id]
   subnet_id = var.subnet_id
 
