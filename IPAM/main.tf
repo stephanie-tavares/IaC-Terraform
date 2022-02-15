@@ -49,7 +49,7 @@ resource "aws_vpc_ipam_pool_cidr" "regional" {
   cidr         = cidrsubnet(var.top_level_pool_cidr, 8, each.value)
 }
 
-resource "aws_vpc" "infraprojects-dev" {
+resource "aws_vpc" "your-vpc-name-here" {
   ipv4_ipam_pool_id   = aws_vpc_ipam_pool.regional[var.region].id
   ipv4_netmask_length = 24
   depends_on = [
