@@ -4,7 +4,7 @@ resource "aws_instance" "grafana-prometheus" {
   security_groups = [aws_security_group.grafana-prometheus.id]
   iam_instance_profile = var.iam_instance_profile
   #key_name = ""
-  user_data = "${file("instalador.sh")}" #Using external doc to install prometheus
+  user_data = "${file("install.sh")}" #Using external doc to install prometheus
   vpc_security_group_ids = [aws_security_group.grafana-prometheus.id]
   subnet_id = var.subnet_id
 
